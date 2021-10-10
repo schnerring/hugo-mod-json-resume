@@ -1,5 +1,5 @@
 # hugo-json-resume
 
-Use structured [JSON Resume](https://jsonresume.org/) data with [Hugo](https://gohugo.io/).
-Import this project as [theme component](https://gohugo.io/hugo-modules/theme-components/)
-to make use of the [shortcodes](https://gohugo.io/content-management/shortcodes/).
+[Hugo shortcodes](https://gohugo.io/content-management/shortcodes/) to add
+structured [JSON Resume](https://jsonresume.org/) data to your [Hugo](https://gohugo.io/)
+site.
