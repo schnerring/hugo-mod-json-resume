@@ -1,0 +1,20 @@
+{{ $cv := index $.Site.Data.cv $.Site.Language.Lang }}
+{{ range $cv.volunteer }}
+  <div class="cv__item">
+    <div class="cv__position">
+      <strong>{{ .position }}</strong>
+      {{ if .organization }}
+        <span>—</span>
+        {{ if .url }}
+          <a href="{{ .url }}">
+            {{ .organization }}
+          </a>
+        {{ else }}
+          <span>{{ .organization }}</span>
+        {{ end }}
+      {{ end }}
+    </div>
+    {{ partial "cv/duration" . }}
+    {{ partial "cv/summary" . }}
+  </div>
+{{ end }}

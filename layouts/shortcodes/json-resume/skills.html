@@ -1,0 +1,13 @@
+{{ $cv := index $.Site.Data.cv $.Site.Language.Lang }}
+<ul>
+  {{ range $cv.skills }}
+    <li>
+      <p><strong>{{ .name }} ({{ .level }})</strong></p>
+      {{ with .keywords }}
+        <p>
+          {{ delimit . ", " }}
+        </p>
+      {{ end }}
+    </li>
+  {{ end }}
+</ul>

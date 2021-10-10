@@ -1,0 +1,6 @@
+{{ $cv := index $.Site.Data.cv $.Site.Language.Lang }}
+<ul>
+  {{ range $cv.interests }}
+    <li>{{ .name }} — {{ delimit .keywords ", " }}</li>
+  {{ end }}
+</ul>

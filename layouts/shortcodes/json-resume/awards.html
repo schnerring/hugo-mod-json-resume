@@ -1,0 +1,17 @@
+{{ $cv := index $.Site.Data.cv $.Site.Language.Lang }}
+{{ range $cv.awards }}
+  <div class="cv__item">
+    <div class="cv__position">
+      <strong>{{ .title }}</strong>
+      <span>—</span>
+      <span>{{ .awarder }}</span>
+    </div>
+    <div class="cv__duration">
+      {{ partial "icons/tabler-icon" "clock" }}
+      <span>{{ .date }}</span>
+    </div>
+    <p>
+      {{ .summary }}
+    </p>
+  </div>
+{{ end }}

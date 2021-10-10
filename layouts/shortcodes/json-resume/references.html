@@ -1,0 +1,7 @@
+{{ $cv := index $.Site.Data.cv $.Site.Language.Lang }}
+{{ range $cv.references }}
+  <blockquote>
+    <p>{{ .reference }}</p>
+    <p>— {{ .name }}</p>
+  </blockquote>
+{{ end }}

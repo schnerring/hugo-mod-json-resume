@@ -1,0 +1,6 @@
+{{ $cv := index $.Site.Data.cv $.Site.Language.Lang }}
+<ul>
+  {{ range $cv.languages }}
+    <li>{{ .language }} — {{ .fluency }}</li>
+  {{ end }}
+</ul>

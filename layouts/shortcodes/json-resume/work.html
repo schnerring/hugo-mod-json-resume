@@ -1,35 +1,33 @@
 {{ $cv := index $.Site.Data.cv $.Site.Language.Lang }}
-{{ with $cv.work }}
-  {{ range . }}
-    <div class="cv__item">
-      <div class="cv__position">
-        <strong>{{ .position }}</strong>
-        {{ if .name }}
-          <span>—</span>
-          {{ if .url }}
-            <a href="{{ .url }}">
-              {{ .name }}
-            </a>
-          {{ else }}
-            <span>{{ .name }}</span>
-          {{ end }}
+{{ range $cv.work }}
+  <div class="cv__item">
+    <div class="cv__position">
+      <strong>{{ .position }}</strong>
+      {{ if .name }}
+        <span>—</span>
+        {{ if .url }}
+          <a href="{{ .url }}">
+            {{ .name }}
+          </a>
+        {{ else }}
+          <span>{{ .name }}</span>
         {{ end }}
-        {{ with .description }}
-          <span>,</span>
-          <span>{{ . }}</span>
-        {{ end }}
-      </div>
-
-      {{ partial "cv/duration.html" . }}
-
-      {{ with .location }}
-        <div class="cv__location">
-          {{ partial "icons/tabler-icon" "map-pin" }}
-          <span>{{ . }}</span>
-        </div>
       {{ end }}
-
-      {{ partial "cv/summary" . }}
+      {{ with .description }}
+        <span>,</span>
+        <span>{{ . }}</span>
+      {{ end }}
     </div>
-  {{ end }}
+
+    {{ partial "cv/duration.html" . }}
+
+    {{ with .location }}
+      <div class="cv__location">
+        {{ partial "icons/tabler-icon" "map-pin" }}
+        <span>{{ . }}</span>
+      </div>
+    {{ end }}
+
+    {{ partial "cv/summary" . }}
+  </div>
 {{ end }}

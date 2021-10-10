@@ -1,0 +1,31 @@
+{{ $cv := index $.Site.Data.cv $.Site.Language.Lang }}
+{{ range $cv.education }}
+  <div class="cv__item">
+    <div class="cv__position">
+      <strong>{{ .area }} ({{ .studyType }})</strong>
+      {{ if .institution }}
+        <span>—</span>
+        {{ if .url }}
+          <a href="{{ .url }}">
+            {{ .institution }}
+          </a>
+        {{ else }}
+          <span>{{ .institution }}</span>
+        {{ end }}
+      {{ end }}
+    </div>
+    {{ partial "cv/duration" . }}
+    <p>
+      {{ .score }}
+    </p>
+    <p>
+      {{ with .courses }}
+        <ul>
+          {{ range . }}
+            <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </p>
+  </div>
+{{ end }}
