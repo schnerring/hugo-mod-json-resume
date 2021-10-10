@@ -19,7 +19,7 @@
       {{ end }}
     </div>
 
-    {{ partial "cv/duration.html" . }}
+    {{ partial "json-resume/duration.html" . }}
 
     {{ with .location }}
       <div class="cv__location">
@@ -27,6 +27,6 @@
       </div>
     {{ end }}
 
-    {{ partial "cv/summary" . }}
+    {{ partial "json-resume/summary" . }}
   </div>
 {{ end }}
