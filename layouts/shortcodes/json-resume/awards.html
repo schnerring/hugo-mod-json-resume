@@ -2,17 +2,16 @@
 <section class="jr__list jr-awards__list">
   {{ range $cv.awards }}
     <div class="jr__item jr-awards__item">
-      <div class="cv__position">
-        <strong>{{ .title }}</strong>
-        <span>—</span>
-        <span>{{ .awarder }}</span>
+      <div class="jr__item-meta">
+        <div class="jr-awards__title">{{ .title }}</div>
+        <div class="jr-awards__date">{{ .date }}</div>
       </div>
-      <div class="cv__duration">
-        <span>{{ .date }}</span>
+      <div class="jr__item-meta">{{ .awarder }}</div>
+      <div class="jr__item-content">
+        <p>
+          {{ .summary }}
+        </p>
       </div>
-      <p>
-        {{ .summary }}
-      </p>
     </div>
   {{ end }}
 </section>

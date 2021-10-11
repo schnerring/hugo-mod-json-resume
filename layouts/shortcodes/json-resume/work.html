@@ -3,9 +3,7 @@
   {{ range $cv.work }}
     <div class="jr__item jr-work__item">
       <div class="jr__item-meta">
-        <div class="jr-work__position">
-          {{ .position }}
-        </div>
+        <div class="jr-work__position">{{ .position }}</div>
         {{ partial "json-resume/duration.html" (dict "context" . "site" $.Site) }}
       </div>
 
