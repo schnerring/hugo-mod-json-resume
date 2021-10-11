@@ -1,11 +1,11 @@
-<div class="cv__duration">
-  <span>{{ .startDate }}</span>
-  <span>&nbsp;-&nbsp;</span>
+<div class="jr__duration">
+  <span>{{ .context.startDate }}</span>
+  <span>-</span>
   <span>
-    {{- with .endDate -}}
+    {{- with .context.endDate -}}
       {{- . -}}
     {{- else -}}
-      present
+      {{ .site.Params.jsonResume.present | default "present" }}
     {{- end -}}
   </span>
 </div>
