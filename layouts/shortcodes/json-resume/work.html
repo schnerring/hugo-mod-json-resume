@@ -1,32 +1,50 @@
 {{ $cv := index $.Site.Data.cv $.Site.Language.Lang }}
-{{ range $cv.work }}
-  <div class="cv__item">
-    <div class="cv__position">
-      <strong>{{ .position }}</strong>
-      {{ if .name }}
-        <span>—</span>
-        {{ if .url }}
-          <a href="{{ .url }}">
-            {{ .name }}
-          </a>
-        {{ else }}
-          <span>{{ .name }}</span>
-        {{ end }}
-      {{ end }}
-      {{ with .description }}
-        <span>,</span>
-        <span>{{ . }}</span>
-      {{ end }}
-    </div>
-
-    {{ partial "json-resume/duration.html" . }}
-
-    {{ with .location }}
-      <div class="cv__location">
-        <span>{{ . }}</span>
+<section class="jr-work__list">
+  {{ range $cv.work }}
+    <div class="jr-work__item">
+      <div class="jr__item-meta">
+        <div class="jr-work__position">
+          {{ .position }}
+        </div>
+        {{ partial "json-resume/duration.html" (dict "context" . "site" $.Site) }}
       </div>
-    {{ end }}
 
-    {{ partial "json-resume/summary" . }}
-  </div>
-{{ end }}
+      <div class="jr__item-meta">
+        {{ if or .name .location }}
+          <div>
+            {{ if .name }}
+              {{ if .url }}
+                <a class="jr-work__name" href="{{ .url }}">
+                  {{ .name }}
+                </a>
+              {{ else }}
+                <span class="jr-work__name">{{ .name }}</span>
+              {{ end }}
+            {{ end }}
+            {{ with .description }}
+              <span>—</span>
+              <span class="jr-work__description">{{ . }}</span>
+            {{ end }}
+          </div>
+        {{ end }}
+
+        {{ with .location }}
+          <div class="jr-work__location">{{ . }}</div>
+        {{ end }}
+      </div>
+
+      <div class="jr__item-content">
+        {{ with .summary }}
+          <p class="jr-work__summary">{{ . }}</p>
+        {{ end }}
+        {{ with .highlights }}
+          <ul class="jr-work__highlights">
+            {{ range . }}
+              <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
+</section>
