@@ -1,20 +1,22 @@
 {{ $cv := index $.Site.Data.cv $.Site.Language.Lang }}
-{{ range $cv.volunteer }}
-  <div class="cv__item">
-    <div class="cv__position">
-      <strong>{{ .position }}</strong>
-      {{ if .organization }}
-        <span>—</span>
-        {{ if .url }}
-          <a href="{{ .url }}">
-            {{ .organization }}
-          </a>
-        {{ else }}
-          <span>{{ .organization }}</span>
+<section class="jr__list jr-volunteer__list">
+  {{ range $cv.volunteer }}
+    <div class="jr__item jr-volunteer__item">
+      <div class="cv__position">
+        <strong>{{ .position }}</strong>
+        {{ if .organization }}
+          <span>—</span>
+          {{ if .url }}
+            <a href="{{ .url }}">
+              {{ .organization }}
+            </a>
+          {{ else }}
+            <span>{{ .organization }}</span>
+          {{ end }}
         {{ end }}
-      {{ end }}
+      </div>
+      {{ partial "json-resume/duration" . }}
+      {{ partial "json-resume/summary" . }}
     </div>
-    {{ partial "json-resume/duration" . }}
-    {{ partial "json-resume/summary" . }}
-  </div>
-{{ end }}
+  {{ end }}
+</section>

@@ -1,13 +1,15 @@
 {{ $cv := index $.Site.Data.cv $.Site.Language.Lang }}
-<ul>
-  {{ range $cv.skills }}
-    <li>
-      <p><strong>{{ .name }} ({{ .level }})</strong></p>
-      {{ with .keywords }}
-        <p>
-          {{ delimit . ", " }}
-        </p>
-      {{ end }}
-    </li>
-  {{ end }}
-</ul>
+<section class="jr__list jr-skills__list">
+  <ul>
+    {{ range $cv.skills }}
+      <li class="jr__item jr-skills__item">
+        <p><strong>{{ .name }} ({{ .level }})</strong></p>
+        {{ with .keywords }}
+          <p>
+            {{ delimit . ", " }}
+          </p>
+        {{ end }}
+      </li>
+    {{ end }}
+  </ul>
+</section>

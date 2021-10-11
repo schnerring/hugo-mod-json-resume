@@ -1,7 +1,7 @@
 {{ $cv := index $.Site.Data.cv $.Site.Language.Lang }}
-<section class="jr-work__list">
+<section class="jr__list jr-work__list">
   {{ range $cv.work }}
-    <div class="jr-work__item">
+    <div class="jr__item jr-work__item">
       <div class="jr__item-meta">
         <div class="jr-work__position">
           {{ .position }}

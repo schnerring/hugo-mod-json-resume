@@ -1,21 +1,23 @@
 {{ $cv := index $.Site.Data.cv $.Site.Language.Lang }}
-{{ range $cv.certificates }}
-  <div class="cv__item">
-    <div class="cv__position">
-      <strong>
-        {{ if .url }}
-          <a href="{{ .url }}">
-            {{ .name }}
-          </a>
-        {{ else }}
-          <span>{{ .name }}</span>
-        {{ end }}
-      </strong>
-      <span>—</span>
-      <span>{{ .issuer }}</span>
+<section class="jr__list jr-certificates__list">
+  {{ range $cv.certificates }}
+    <div class="jr__item jr-certificates__item">
+      <div class="cv__position">
+        <strong>
+          {{ if .url }}
+            <a href="{{ .url }}">
+              {{ .name }}
+            </a>
+          {{ else }}
+            <span>{{ .name }}</span>
+          {{ end }}
+        </strong>
+        <span>—</span>
+        <span>{{ .issuer }}</span>
+      </div>
+      <div class="cv__duration">
+        <span>{{ .date }}</span>
+      </div>
     </div>
-    <div class="cv__duration">
-      <span>{{ .date }}</span>
-    </div>
-  </div>
-{{ end }}
+  {{ end }}
+</section>
