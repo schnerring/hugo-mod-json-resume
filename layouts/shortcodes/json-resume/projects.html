@@ -21,7 +21,7 @@
         {{ end }}
       </div>
 
-      {{ partial "json-resume/duration.html" . }}
+      {{ partial "json-resume/duration.html" (dict "context" . "site" $.Site) }}
 
       {{ with .entity }}
         <p>{{ . }}</p>

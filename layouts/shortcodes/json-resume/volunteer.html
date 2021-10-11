@@ -15,7 +15,7 @@
           {{ end }}
         {{ end }}
       </div>
-      {{ partial "json-resume/duration" . }}
+      {{ partial "json-resume/duration.html" (dict "context" . "site" $.Site) }}
       {{ partial "json-resume/summary" . }}
     </div>
   {{ end }}
