@@ -2,32 +2,31 @@
 <section class="jr__list jr-education__list">
   {{ range $cv.education }}
     <div class="jr__item jr-education__item">
-      <div class="cv__position">
-        <strong>{{ .area }} ({{ .studyType }})</strong>
-        {{ if .institution }}
-          <span>—</span>
-          {{ if .url }}
-            <a href="{{ .url }}">
-              {{ .institution }}
-            </a>
-          {{ else }}
-            <span>{{ .institution }}</span>
-          {{ end }}
-        {{ end }}
+      <div class="jr__item-meta">
+        <div class="jr-education__area">{{ .area }} ({{ .studyType }})</div>
+        {{ partial "json-resume/duration.html" (dict "context" . "site" $.Site) }}
       </div>
-      {{ partial "json-resume/duration.html" (dict "context" . "site" $.Site) }}
-      <p>
+      {{ if .institution }}
+        <div class="jr__item-meta">
+          <div class="jr-education__institution">
+            {{ if .url }}
+              <a href="{{ .url }}">{{ .institution }}</a>
+            {{ else }}
+              <span>{{ .institution }}</span>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+      <p class="jr-education__score">
         {{ .score }}
       </p>
-      <p>
-        {{ with .courses }}
-          <ul>
-            {{ range . }}
-              <li>{{ . }}</li>
-            {{ end }}
-          </ul>
-        {{ end }}
-      </p>
+      {{ with .courses }}
+        <ul class="jr-education__courses">
+          {{ range . }}
+            <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      {{ end }}
     </div>
   {{ end }}
 </section>
