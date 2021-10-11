@@ -15,8 +15,22 @@
           {{ end }}
         {{ end }}
       </div>
+
       {{ partial "json-resume/duration.html" (dict "context" . "site" $.Site) }}
-      {{ partial "json-resume/summary" . }}
+
+
+      <div class="jr__item-content">
+        {{ with .summary }}
+          <p class="jr-volunteer__summary">{{ . }}</p>
+        {{ end }}
+        {{ with .highlights }}
+          <ul class="jr-volunteer__highlights">
+            {{ range . }}
+              <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </div>
     </div>
   {{ end }}
 </section>
