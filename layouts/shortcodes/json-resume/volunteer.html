@@ -2,22 +2,22 @@
 <section class="jr__list jr-volunteer__list">
   {{ range $cv.volunteer }}
     <div class="jr__item jr-volunteer__item">
-      <div class="cv__position">
-        <strong>{{ .position }}</strong>
-        {{ if .organization }}
-          <span>—</span>
-          {{ if .url }}
-            <a href="{{ .url }}">
-              {{ .organization }}
-            </a>
-          {{ else }}
-            <span>{{ .organization }}</span>
-          {{ end }}
-        {{ end }}
+      <div class="jr__item-meta">
+        <div class="jr-volunteer__position">{{ .position }}</div>
+        {{ partial "json-resume/duration.html" (dict "context" . "site" $.Site) }}
       </div>
 
-      {{ partial "json-resume/duration.html" (dict "context" . "site" $.Site) }}
-
+      <div class="jr__item-meta">
+        {{ if .organization }}
+          <div class="jr-volunteer__organization">
+            {{ if .url }}
+              <a href="{{ .url }}">{{ .organization }}</a>
+            {{ else }}
+              <span>{{ .organization }}</span>
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
 
       <div class="jr__item-content">
         {{ with .summary }}
