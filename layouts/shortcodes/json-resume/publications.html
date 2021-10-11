@@ -2,23 +2,22 @@
 <section class="jr__list jr-publications__list">
   {{ range $cv.publications }}
     <div class="jr__item jr-publications__item">
-      <div class="cv__position">
-        <strong>
+      <div class="jr__item-meta">
+        <div class="jr-publications__name">
           {{ if .url }}
-            <a href="{{ .url }}">
-              {{ .name }}
-            </a>
+            <a href="{{ .url }}">{{ .name }}</a>
           {{ else }}
             <span>{{ .name }}</span>
           {{ end }}
-        </strong>
-        <span>—</span>
-        <span>{{ .publisher }}</span>
+        </div>
+        <div class="jr-publications__release-date">{{ .releaseDate }}</div>
       </div>
-      <div class="cv__duration">
-        <span>{{ .releaseDate }}</span>
+
+      <div class="jr__item-meta">
+        <div class="jr-publications__publisher">{{ .publisher }}</div>
       </div>
-      <p>{{ .summary }}</p>
+
+      <p class="jr__item-content">{{ .summary }}</p>
     </div>
   {{ end }}
 </section>
