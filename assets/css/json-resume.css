@@ -1,0 +1,10 @@
+.jr__item-meta {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.jr-work__position {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
