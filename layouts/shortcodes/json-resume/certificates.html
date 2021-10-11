@@ -2,8 +2,8 @@
 <section class="jr__list jr-certificates__list">
   {{ range $cv.certificates }}
     <div class="jr__item jr-certificates__item">
-      <div class="cv__position">
-        <strong>
+      <div class="jr__item-meta">
+        <div class="jr-certificates__name">
           {{ if .url }}
             <a href="{{ .url }}">
               {{ .name }}
@@ -11,13 +11,10 @@
           {{ else }}
             <span>{{ .name }}</span>
           {{ end }}
-        </strong>
-        <span>—</span>
-        <span>{{ .issuer }}</span>
+        </div>
+        <div class="jr__item-meta">{{ .date }}</div>
       </div>
-      <div class="cv__duration">
-        <span>{{ .date }}</span>
-      </div>
+      <div class="jr__item-meta">{{ .issuer }}</div>
     </div>
   {{ end }}
 </section>

@@ -4,8 +4,9 @@
   justify-content: space-between;
 }
 
-.jr-work__position,
-.jr-awards__title {
+.jr-awards__title,
+.jr-certificates__name,
+.jr-work__position {
   font-size: 1.25rem;
   font-weight: bold;
 }

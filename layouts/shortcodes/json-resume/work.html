@@ -9,14 +9,14 @@
 
       <div class="jr__item-meta">
         {{ if or .name .location }}
-          <div>
+          <div class="jr-work__name">
             {{ if .name }}
               {{ if .url }}
-                <a class="jr-work__name" href="{{ .url }}">
+                <a href="{{ .url }}">
                   {{ .name }}
                 </a>
               {{ else }}
-                <span class="jr-work__name">{{ .name }}</span>
+                <span>{{ .name }}</span>
               {{ end }}
             {{ end }}
             {{ with .description }}
