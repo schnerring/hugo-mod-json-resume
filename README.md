@@ -39,7 +39,7 @@ npm install
 The module offers a basic CSS stylesheet [assets/css/json-resume.css](./assets/css/json-resume.css)
 that you can use.
 
-Finally, add a file like `content/cv.md` to use the shortcodes:
+Use the `json-resume` shortcode to in markdown files:
 
 ```markdown
 ---
@@ -49,47 +49,19 @@ draft: false
 
 ## Experience
 
-{{< json-resume/work >}}
+{{< json-resume "work" >}}
 
 ## Education
 
-{{< json-resume/education >}}
+{{< json-resume "education" >}}
+```
 
-## Volunteering
+Or use the partials in your layout files:
 
-{{< json-resume/volunteer >}}
-
-## Awards
-
-{{< json-resume/awards >}}
-
-## Certificates
-
-{{< json-resume/certificates >}}
-
-## Publications
-
-{{< json-resume/publications >}}
-
-## Skills
-
-{{< json-resume/skills >}}
-
-## Languages
-
-{{< json-resume/languages >}}
-
-## Interests
-
-{{< json-resume/interests >}}
-
-## References
-
-{{< json-resume/references >}}
-
-## Projects
-
-{{< json-resume/projects >}}
+```html
+<div class="sidebar">
+  <aside class="bio">{{ partial "json-resume/basics.html" . }}</aside>
+</div>
 ```
 
 ## Data Strucuture

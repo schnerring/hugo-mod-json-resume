@@ -1,0 +1,2 @@
+{{ $jsonResumeSection := .Get 0 }}
+{{ partial (printf "json-resume/%s" $jsonResumeSection) . }}
