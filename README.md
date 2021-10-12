@@ -79,6 +79,39 @@ Each file must adhere to the [JSON Resume schema](https://github.com/jsonresume/
 specification. At least one file with the name `<default content language code>.json`
 must exist (defaults to `en`). See also [Hugo Multilingual Mode](https://gohugo.io/content-management/multilingual/).
 
+## Styling
+
+You can style the existing templates by using the pre-defined classes. There is
+generic classes applying to any template which are prefixed with `jr__`, like
+`jr__item` or `jr__date-range`.
+
+Classes specific to resume sections are prefixed with `jr-<section>__<section-field>`,
+like `jr-work__description` or `jr-basics__name`.
+
+### Example
+
+![Example resume section header screenshot](./screenshots/example-resume-section-headers.png)
+
+The above requires the following CSS:
+
+```css
+.jr__item-meta {
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.jr__date,
+.jr__date-range,
+.jr-work__location {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.jr-education__institution {
+  flex-basis: 100%;
+}
+```
+
 ## Attributions
 
 To display social icons, [Simple Icons](https://simpleicons.org/) (CC0) are
