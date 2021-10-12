@@ -1,9 +1,11 @@
 {{ $cv := index $.Site.Data.cv $.Site.Language.Lang }}
 {{ with $cv.basics }}
   <section class="jr__item jr-basics__item">
-    <div class="jr-basics__image">
-      <img src="{{ . }}" alt="Profile picture" />
-    </div>
+    {{ with .image }}
+      <div class="jr-basics__image">
+        <img src="{{ . }}" alt="Profile picture" />
+      </div>
+    {{ end }}
 
     {{ with .name }}
       <div class="jr-basics__name">{{ . }}</div>
