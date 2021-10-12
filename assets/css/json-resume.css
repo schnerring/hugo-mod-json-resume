@@ -1,5 +1,5 @@
 .jr__item-meta {
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 .jr__item-meta,

@@ -5,9 +5,9 @@
       <div class="jr__item jr-awards__item">
         <div class="jr__item-meta">
           <div class="jr-awards__title">{{ .title }}</div>
-          <div class="jr-awards__date">{{ .date }}</div>
+          <div class="jr__date jr-awards__date">{{ .date }}</div>
+          <div class="jr-awards__awarder">{{ .awarder }}</div>
         </div>
-        <div class="jr__item-meta">{{ .awarder }}</div>
         <p class="jr__item-content">{{ .summary }}</p>
       </div>
     {{ end }}

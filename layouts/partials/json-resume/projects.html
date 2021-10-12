@@ -8,9 +8,6 @@
             {{ delimit .roles ", " }}
           </div>
           {{ partial "json-resume/duration.html" (dict "context" . "site" $.Site) }}
-        </div>
-
-        <div class="jr__item-meta">
           <div class="jr-projects__name">
             {{ if .url }}
               <a href="{{ .url }}">{{ .name }}</a>
@@ -25,12 +22,10 @@
               <span class="jr-projects__description">{{ . }}</span>
             {{ end }}
           </div>
+          {{ with .entity }}
+            <div class="jr-projects__entity">{{ . }}</div>
+          {{ end }}
         </div>
-
-        {{ with .entity }}
-          <div class="jr__item-meta">{{ . }}</div>
-        {{ end }}
-
 
         <div class="jr__item-content">
           {{ with .highlights }}

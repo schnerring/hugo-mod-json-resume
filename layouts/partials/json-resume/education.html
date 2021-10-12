@@ -6,9 +6,7 @@
         <div class="jr__item-meta">
           <div class="jr-education__area">{{ .area }} ({{ .studyType }})</div>
           {{ partial "json-resume/duration.html" (dict "context" . "site" $.Site) }}
-        </div>
-        {{ if .institution }}
-          <div class="jr__item-meta">
+          {{ if .institution }}
             <div class="jr-education__institution">
               {{ if .url }}
                 <a href="{{ .url }}">{{ .institution }}</a>
@@ -16,8 +14,8 @@
                 <span>{{ .institution }}</span>
               {{ end }}
             </div>
-          </div>
-        {{ end }}
+          {{ end }}
+        </div>
         <p class="jr-education__score">
           {{ .score }}
         </p>

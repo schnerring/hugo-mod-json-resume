@@ -6,9 +6,6 @@
         <div class="jr__item-meta">
           <div class="jr-work__position">{{ .position }}</div>
           {{ partial "json-resume/duration.html" (dict "context" . "site" $.Site) }}
-        </div>
-
-        <div class="jr__item-meta">
           {{ if or .name .location }}
             <div class="jr-work__name">
               {{ if .name }}
