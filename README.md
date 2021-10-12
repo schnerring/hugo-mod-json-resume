@@ -1,8 +1,8 @@
 # hugo-json-resume
 
-[Hugo shortcodes](https://gohugo.io/content-management/shortcodes/) to add
-structured [JSON Resume](https://jsonresume.org/) data to your [Hugo](https://gohugo.io/)
-site.
+A [Hugo module](https://gohugo.io/hugo-modules/) containing templates to
+integrate multilingual [JSON Resume](https://jsonresume.org/) data into your
+Hugo website.
 
 ## Getting Started
 
@@ -91,6 +91,21 @@ draft: false
 
 {{< json-resume/projects >}}
 ```
+
+## Data Strucuture
+
+The module reads JSON Resume data from Hugo's `data/` directory:
+
+```text
+data/
+├─ json_resume/
+    ├─ de.json
+    ├─ en.json
+```
+
+Each file must adhere to the [JSON Resume schema](https://github.com/jsonresume/resume-schema/blob/master/schema.json)
+specification. At least one file with the name `<default content language code>.json`
+must exist (defaults to `en`). See also [Hugo Multilingual Mode](https://gohugo.io/content-management/multilingual/).
 
 ## Attributions
 
