@@ -18,9 +18,28 @@ Add the following to the `config.toml` file of your site to import the module:
 [module]
   [[module.imports]]
     path = "github.com/schnerring/hugo-json-resume"
+  [[module.mounts]]
+    source = "node_modules/simple-icons/icons"
+    target = "assets/simple-icons"
 ```
 
-Add a file `content/cv.md` with the following content to use the shortcodes:
+Install the module:
+
+```shell
+hugo mod get
+```
+
+Initialize the NPM `package.json` and install the dependencies:
+
+```shell
+hugo mod npm pack
+npm install
+```
+
+The module offers a basic CSS stylesheet [assets/css/json-resume.css](./assets/css/json-resume.css)
+that you can use.
+
+Finally, add a file like `content/cv.md` to use the shortcodes:
 
 ```markdown
 ---
@@ -72,3 +91,8 @@ draft: false
 
 {{< json-resume/projects >}}
 ```
+
+## Attributions
+
+To display social icons, [Simple Icons](https://simpleicons.org/) (CC0) are
+used.

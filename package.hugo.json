@@ -1,0 +1,36 @@
+{
+  "name": "hugo-json-resume",
+  "version": "1.0.0",
+  "description": "Hugo shortcodes to add structured JSON Resume data to your Hugo site.",
+  "author": {
+    "name": "Michael Schnerring",
+    "email": "3743342+schnerring@users.noreply.github.com",
+    "url": "https://schnerring.net"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/schnerring/hugo-json-resume#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schnerring/hugo-json-resume.git"
+  },
+  "bugs": {
+    "url": "https://github.com/schnerring/hugo-json-resume/issues"
+  },
+  "keywords": ["hugo", "json-resume"],
+  "scripts": {
+    "lint:md": "markdownlint --fix **/*.md",
+    "lint": "npm run lint:css && npm run lint:js && npm run lint:md",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.md": "markdownlint --fix"
+  },
+  "devDependencies": {
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.1",
+    "markdownlint-cli": "^0.28.1",
+    "prettier": "^2.3.2",
+    "prettier-plugin-go-template": "0.0.11",
+    "simple-icons": "^5.18.0"
+  }
+}

@@ -1,0 +1,38 @@
+{{ $cv := index $.Site.Data.cv $.Site.Language.Lang }}
+{{ with $cv.basics }}
+  <section class="jr__item jr-basics__item">
+    <div class="jr-basics__image">
+      <img src="{{ . }}" alt="Profile picture" />
+    </div>
+
+    {{ with .name }}
+      <div class="jr-basics__name">{{ . }}</div>
+    {{ end }}
+
+    {{ with .label }}
+      <div class="jr-basics__label">{{ . }}</div>
+    {{ end }}
+
+    {{ with .summary }}
+      <div class="jr-basics__description">{{ . }}</div>
+    {{ end }}
+
+    {{ with where .profiles "username" "ne" nil }}
+      <hr />
+      <div class="jr-basics__profile jr-basics__profile--col">
+        {{ range . }}
+          {{ partial "simple-icon" (dict "url" .url "network" .network "username" .username) }}
+        {{ end }}
+      </div>
+    {{ end }}
+
+    {{ with where .profiles "username" "eq" nil }}
+      <hr />
+      <div class="jr-basics__profile jr-basics__profile--row">
+        {{ range . }}
+          {{ partial "simple-icon" (dict "url" .url "network" .network "username" .username) }}
+        {{ end }}
+      </div>
+    {{ end }}
+  </section>
+{{ end }}

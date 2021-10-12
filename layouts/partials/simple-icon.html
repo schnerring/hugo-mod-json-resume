@@ -1,0 +1,17 @@
+<!-- TODO report go-template linter bug -->
+<!-- prettier-ignore -->
+{{ if .url }}<a href="{{ .url }}">{{ end }}
+
+<div class="jr-basics__profile-item">
+  <div class="jr-basics__profile-icon">
+    {{ $path := printf "simple-icons/%s.svg" .network }}
+    {{ (resources.Get $path).Content | safeHTML }}
+  </div>
+
+  {{ if .username }}
+    <div class="jr-basics__profile-username">{{ .username }}</div>
+  {{ end }}
+</div>
+
+<!-- prettier-ignore -->
+{{ if .url }}</a>{{ end }}
