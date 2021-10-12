@@ -1,4 +1,4 @@
-{{ $cv := index $.Site.Data.cv $.Site.Language.Lang }}
+{{ $cv := index $.Site.Data.json_resume $.Site.Language.Lang }}
 <section class="jr__list jr-awards__list">
   {{ range $cv.awards }}
     <div class="jr__item jr-awards__item">

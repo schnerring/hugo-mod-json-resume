@@ -1,9 +1,10 @@
-{{ $cv := index $.Site.Data.cv $.Site.Language.Lang }}
+{{ $cv := index $.Site.Data.json_resume $.Site.Language.Lang }}
 <section class="jr__list jr-languages__list">
   <ul>
     {{ range $cv.languages }}
       <li class="jr__item jr-languages__item">
-        {{ .language }} — {{ .fluency }}
+        {{ .language }} —
+        {{ .fluency }}
       </li>
     {{ end }}
   </ul>
