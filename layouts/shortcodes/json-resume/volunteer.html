@@ -1,36 +1,38 @@
 {{ $cv := index $.Site.Data.json_resume $.Site.Language.Lang }}
-<section class="jr__list jr-volunteer__list">
-  {{ range $cv.volunteer }}
-    <div class="jr__item jr-volunteer__item">
-      <div class="jr__item-meta">
-        <div class="jr-volunteer__position">{{ .position }}</div>
-        {{ partial "json-resume/duration.html" (dict "context" . "site" $.Site) }}
-      </div>
+{{ with $cv.volunteer }}
+  <section class="jr__list jr-volunteer__list">
+    {{ range . }}
+      <div class="jr__item jr-volunteer__item">
+        <div class="jr__item-meta">
+          <div class="jr-volunteer__position">{{ .position }}</div>
+          {{ partial "json-resume/duration.html" (dict "context" . "site" $.Site) }}
+        </div>
 
-      <div class="jr__item-meta">
-        {{ if .organization }}
-          <div class="jr-volunteer__organization">
-            {{ if .url }}
-              <a href="{{ .url }}">{{ .organization }}</a>
-            {{ else }}
-              <span>{{ .organization }}</span>
-            {{ end }}
-          </div>
-        {{ end }}
-      </div>
+        <div class="jr__item-meta">
+          {{ if .organization }}
+            <div class="jr-volunteer__organization">
+              {{ if .url }}
+                <a href="{{ .url }}">{{ .organization }}</a>
+              {{ else }}
+                <span>{{ .organization }}</span>
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
 
-      <div class="jr__item-content">
-        {{ with .summary }}
-          <p class="jr-volunteer__summary">{{ . }}</p>
-        {{ end }}
-        {{ with .highlights }}
-          <ul class="jr-volunteer__highlights">
-            {{ range . }}
-              <li>{{ . }}</li>
-            {{ end }}
-          </ul>
-        {{ end }}
+        <div class="jr__item-content">
+          {{ with .summary }}
+            <p class="jr-volunteer__summary">{{ . }}</p>
+          {{ end }}
+          {{ with .highlights }}
+            <ul class="jr-volunteer__highlights">
+              {{ range . }}
+                <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          {{ end }}
+        </div>
       </div>
-    </div>
-  {{ end }}
-</section>
+    {{ end }}
+  </section>
+{{ end }}

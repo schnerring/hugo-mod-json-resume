@@ -1,13 +1,15 @@
 {{ $cv := index $.Site.Data.json_resume $.Site.Language.Lang }}
-<section class="jr__list jr-awards__list">
-  {{ range $cv.awards }}
-    <div class="jr__item jr-awards__item">
-      <div class="jr__item-meta">
-        <div class="jr-awards__title">{{ .title }}</div>
-        <div class="jr-awards__date">{{ .date }}</div>
+{{ with $cv.awards }}
+  <section class="jr__list jr-awards__list">
+    {{ range . }}
+      <div class="jr__item jr-awards__item">
+        <div class="jr__item-meta">
+          <div class="jr-awards__title">{{ .title }}</div>
+          <div class="jr-awards__date">{{ .date }}</div>
+        </div>
+        <div class="jr__item-meta">{{ .awarder }}</div>
+        <p class="jr__item-content">{{ .summary }}</p>
       </div>
-      <div class="jr__item-meta">{{ .awarder }}</div>
-      <p class="jr__item-content">{{ .summary }}</p>
-    </div>
-  {{ end }}
-</section>
+    {{ end }}
+  </section>
+{{ end }}

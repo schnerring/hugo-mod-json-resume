@@ -1,11 +1,13 @@
 {{ $cv := index $.Site.Data.json_resume $.Site.Language.Lang }}
-<section class="jr__list jr-interests__list">
-  <ul>
-    {{ range $cv.interests }}
-      <li class="jr__item jr-interests__item">
-        {{ .name }} —
-        {{ delimit .keywords ", " }}
-      </li>
-    {{ end }}
-  </ul>
-</section>
+{{ with $cv.interests }}
+  <section class="jr__list jr-interests__list">
+    <ul>
+      {{ range . }}
+        <li class="jr__item jr-interests__item">
+          {{ .name }} —
+          {{ delimit .keywords ", " }}
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+{{ end }}

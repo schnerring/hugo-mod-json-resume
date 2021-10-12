@@ -1,48 +1,50 @@
 {{ $cv := index $.Site.Data.json_resume $.Site.Language.Lang }}
-<section class="jr__list jr-work__list">
-  {{ range $cv.work }}
-    <div class="jr__item jr-work__item">
-      <div class="jr__item-meta">
-        <div class="jr-work__position">{{ .position }}</div>
-        {{ partial "json-resume/duration.html" (dict "context" . "site" $.Site) }}
-      </div>
+{{ with $cv.work }}
+  <section class="jr__list jr-work__list">
+    {{ range . }}
+      <div class="jr__item jr-work__item">
+        <div class="jr__item-meta">
+          <div class="jr-work__position">{{ .position }}</div>
+          {{ partial "json-resume/duration.html" (dict "context" . "site" $.Site) }}
+        </div>
 
-      <div class="jr__item-meta">
-        {{ if or .name .location }}
-          <div class="jr-work__name">
-            {{ if .name }}
-              {{ if .url }}
-                <a href="{{ .url }}">
-                  {{ .name }}
-                </a>
-              {{ else }}
-                <span>{{ .name }}</span>
+        <div class="jr__item-meta">
+          {{ if or .name .location }}
+            <div class="jr-work__name">
+              {{ if .name }}
+                {{ if .url }}
+                  <a href="{{ .url }}">
+                    {{ .name }}
+                  </a>
+                {{ else }}
+                  <span>{{ .name }}</span>
+                {{ end }}
               {{ end }}
-            {{ end }}
-            {{ with .description }}
-              <span>—</span>
-              <span class="jr-work__description">{{ . }}</span>
-            {{ end }}
-          </div>
-        {{ end }}
+              {{ with .description }}
+                <span>—</span>
+                <span class="jr-work__description">{{ . }}</span>
+              {{ end }}
+            </div>
+          {{ end }}
 
-        {{ with .location }}
-          <div class="jr-work__location">{{ . }}</div>
-        {{ end }}
-      </div>
+          {{ with .location }}
+            <div class="jr-work__location">{{ . }}</div>
+          {{ end }}
+        </div>
 
-      <div class="jr__item-content">
-        {{ with .summary }}
-          <p class="jr-work__summary">{{ . }}</p>
-        {{ end }}
-        {{ with .highlights }}
-          <ul class="jr-work__highlights">
-            {{ range . }}
-              <li>{{ . }}</li>
-            {{ end }}
-          </ul>
-        {{ end }}
+        <div class="jr__item-content">
+          {{ with .summary }}
+            <p class="jr-work__summary">{{ . }}</p>
+          {{ end }}
+          {{ with .highlights }}
+            <ul class="jr-work__highlights">
+              {{ range . }}
+                <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          {{ end }}
+        </div>
       </div>
-    </div>
-  {{ end }}
-</section>
+    {{ end }}
+  </section>
+{{ end }}

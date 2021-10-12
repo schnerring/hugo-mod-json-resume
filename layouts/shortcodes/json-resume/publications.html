@@ -1,23 +1,25 @@
 {{ $cv := index $.Site.Data.json_resume $.Site.Language.Lang }}
-<section class="jr__list jr-publications__list">
-  {{ range $cv.publications }}
-    <div class="jr__item jr-publications__item">
-      <div class="jr__item-meta">
-        <div class="jr-publications__name">
-          {{ if .url }}
-            <a href="{{ .url }}">{{ .name }}</a>
-          {{ else }}
-            <span>{{ .name }}</span>
-          {{ end }}
+{{ with $cv.publications }}
+  <section class="jr__list jr-publications__list">
+    {{ range . }}
+      <div class="jr__item jr-publications__item">
+        <div class="jr__item-meta">
+          <div class="jr-publications__name">
+            {{ if .url }}
+              <a href="{{ .url }}">{{ .name }}</a>
+            {{ else }}
+              <span>{{ .name }}</span>
+            {{ end }}
+          </div>
+          <div class="jr-publications__release-date">{{ .releaseDate }}</div>
         </div>
-        <div class="jr-publications__release-date">{{ .releaseDate }}</div>
-      </div>
 
-      <div class="jr__item-meta">
-        <div class="jr-publications__publisher">{{ .publisher }}</div>
-      </div>
+        <div class="jr__item-meta">
+          <div class="jr-publications__publisher">{{ .publisher }}</div>
+        </div>
 
-      <p class="jr__item-content">{{ .summary }}</p>
-    </div>
-  {{ end }}
-</section>
+        <p class="jr__item-content">{{ .summary }}</p>
+      </div>
+    {{ end }}
+  </section>
+{{ end }}

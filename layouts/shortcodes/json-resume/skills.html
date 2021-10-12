@@ -1,15 +1,17 @@
 {{ $cv := index $.Site.Data.json_resume $.Site.Language.Lang }}
-<section class="jr__list jr-skills__list">
-  <ul>
-    {{ range $cv.skills }}
-      <li class="jr__item jr-skills__item">
-        <p><strong>{{ .name }} ({{ .level }})</strong></p>
-        {{ with .keywords }}
-          <p>
-            {{ delimit . ", " }}
-          </p>
-        {{ end }}
-      </li>
-    {{ end }}
-  </ul>
-</section>
+{{ with $cv.skills }}
+  <section class="jr__list jr-skills__list">
+    <ul>
+      {{ range . }}
+        <li class="jr__item jr-skills__item">
+          <p><strong>{{ .name }} ({{ .level }})</strong></p>
+          {{ with .keywords }}
+            <p>
+              {{ delimit . ", " }}
+            </p>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+{{ end }}
