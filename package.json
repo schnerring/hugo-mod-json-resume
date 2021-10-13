@@ -8,25 +8,27 @@
     "url": "https://github.com/schnerring/hugo-json-resume/issues"
   },
   "comments": {
-    "dependencies": {},
+    "dependencies": {
+      "simple-icons": "project"
+    },
     "devDependencies": {
       "husky": "project",
       "lint-staged": "project",
       "markdownlint-cli": "project",
       "prettier": "project",
-      "prettier-plugin-go-template": "project",
-      "simple-icons": "project"
+      "prettier-plugin-go-template": "project"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "simple-icons": "^5.18.0"
+  },
   "description": "Hugo shortcodes to add structured JSON Resume data to your Hugo site.",
   "devDependencies": {
     "husky": "^7.0.1",
     "lint-staged": "^11.1.1",
     "markdownlint-cli": "^0.28.1",
     "prettier": "^2.3.2",
-    "prettier-plugin-go-template": "0.0.11",
-    "simple-icons": "^5.18.0"
+    "prettier-plugin-go-template": "0.0.11"
   },
   "homepage": "https://github.com/schnerring/hugo-json-resume#readme",
   "keywords": [

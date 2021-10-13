@@ -4,7 +4,7 @@
 
 <div class="jr-basics__profile-item">
   <div class="jr-basics__profile-icon">
-    {{ $path := printf "simple-icons/%s.svg" .network }}
+    {{ $path := printf "simple-icons/%s.svg" (lower .network) }}
     {{ (resources.Get $path).Content | safeHTML }}
   </div>
 
