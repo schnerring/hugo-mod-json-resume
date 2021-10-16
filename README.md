@@ -1,4 +1,4 @@
-# hugo-json-resume
+# hugo-mod-json-resume
 
 A [Hugo module](https://gohugo.io/hugo-modules/) containing templates to
 integrate multilingual [JSON Resume](https://jsonresume.org/) data into your
@@ -17,7 +17,7 @@ Add the following to the `config.toml` file of your site to import the module:
 ```toml
 [module]
   [[module.imports]]
-    path = "github.com/schnerring/hugo-json-resume"
+    path = "github.com/schnerring/hugo-mod-json-resume"
   [[module.mounts]]
     source = "node_modules/simple-icons/icons"
     target = "assets/simple-icons"

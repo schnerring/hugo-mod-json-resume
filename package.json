@@ -5,7 +5,7 @@
     "url": "https://schnerring.net"
   },
   "bugs": {
-    "url": "https://github.com/schnerring/hugo-json-resume/issues"
+    "url": "https://github.com/schnerring/hugo-mod-json-resume/issues"
   },
   "comments": {
     "dependencies": {
@@ -30,7 +30,7 @@
     "prettier": "^2.3.2",
     "prettier-plugin-go-template": "0.0.11"
   },
-  "homepage": "https://github.com/schnerring/hugo-json-resume#readme",
+  "homepage": "https://github.com/schnerring/hugo-mod-json-resume#readme",
   "keywords": [
     "hugo",
     "json-resume"
@@ -39,10 +39,10 @@
   "lint-staged": {
     "*.md": "markdownlint --fix"
   },
-  "name": "hugo-json-resume",
+  "name": "hugo-mod-json-resume",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/schnerring/hugo-json-resume.git"
+    "url": "git+https://github.com/schnerring/hugo-mod-json-resume.git"
   },
   "scripts": {
     "lint": "npm run lint:css && npm run lint:js && npm run lint:md",
