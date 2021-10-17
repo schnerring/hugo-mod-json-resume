@@ -23,7 +23,7 @@
       <hr />
       <div class="jr-basics__profile jr-basics__profile--col">
         {{ range . }}
-          {{ partial "simple-icon" (dict "url" .url "network" .network "username" .username) }}
+          {{ partial "simple-icon.html" (dict "url" .url "network" .network "username" .username) }}
         {{ end }}
       </div>
     {{ end }}
@@ -32,7 +32,7 @@
       <hr />
       <div class="jr-basics__profile jr-basics__profile--row">
         {{ range . }}
-          {{ partial "simple-icon" (dict "url" .url "network" .network "username" .username) }}
+          {{ partial "simple-icon.html" (dict "url" .url "network" .network "username" .username) }}
         {{ end }}
       </div>
     {{ end }}
