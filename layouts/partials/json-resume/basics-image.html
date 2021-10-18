@@ -1,5 +1,10 @@
 {{ if .image }}
   <div class="jr-basics__image">
-    <img src="{{ .image }}" alt="Picture{{ with .name }}of {{ . }}{{ end }}" />
+    <img
+      src="{{ .image }}"
+      alt="Picture{{ with .name }}of {{ . }}{{ end }}"
+      width="250"
+      height="250"
+    />
   </div>
 {{ end }}
