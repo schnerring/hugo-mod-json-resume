@@ -36,7 +36,7 @@ hugo mod npm pack
 npm install
 ```
 
-The module offers a basic CSS stylesheet [assets/css/json-resume.css](./assets/css/json-resume.css)
+The module offers a simple CSS stylesheet [assets/css/json-resume.css](./assets/css/json-resume.css)
 that you can use.
 
 Use the `json-resume` shortcode to in markdown files:
@@ -64,7 +64,7 @@ Or use the partials in your layout files:
 </div>
 ```
 
-## Data Strucuture
+## Data Structure
 
 The module reads JSON Resume data from Hugo's `data/` directory:
 
@@ -82,8 +82,8 @@ must exist (defaults to `en`). See also [Hugo Multilingual Mode](https://gohugo.
 ## Styling
 
 You can style the existing templates by using the pre-defined classes. There is
-generic classes applying to any template which are prefixed with `jr__`, like
-`jr__item` or `jr__date-range`.
+generic classes prefixed with `jr__` like
+`jr__item` or `jr__date-range` that apply to any template.
 
 Classes specific to resume sections are prefixed with `jr-<section>__<section-field>`,
 like `jr-work__description` or `jr-basics__name`.
