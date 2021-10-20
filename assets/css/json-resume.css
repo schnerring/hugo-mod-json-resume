@@ -56,6 +56,11 @@
   display: flex;
 }
 
+.jr-basics__profile-item {
+  display: flex;
+  padding: 0.2rem;
+}
+
 .jr-basics__profile--col {
   flex-direction: column;
 }
