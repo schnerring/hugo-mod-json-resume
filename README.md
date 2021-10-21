@@ -39,7 +39,7 @@ npm install
 The module offers a simple CSS stylesheet [assets/css/json-resume.css](./assets/css/json-resume.css)
 that you can use.
 
-Use the `json-resume` shortcode to in markdown files:
+Use the `json-resume` shortcode in markdown files:
 
 ```markdown
 ---
@@ -81,9 +81,9 @@ must exist (defaults to `en`). See also [Hugo Multilingual Mode](https://gohugo.
 
 ## Styling
 
-You can style the existing templates by using the pre-defined classes. There is
-generic classes prefixed with `jr__` like
-`jr__item` or `jr__date-range` that apply to any template.
+You can style the existing templates by using the pre-defined classes. There are
+generic classes prefixed with `jr__` like `jr__item` or `jr__date-range` that
+apply to any template.
 
 Classes specific to resume sections are prefixed with `jr-<section>__<section-field>`,
 like `jr-work__description` or `jr-basics__name`.
