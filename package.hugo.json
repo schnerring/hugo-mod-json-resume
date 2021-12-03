@@ -26,13 +26,13 @@
     "*.md": "markdownlint --fix"
   },
   "dependencies": {
-    "simple-icons": "^5.18.0"
+    "simple-icons": "^6.0.0"
   },
   "devDependencies": {
-    "husky": "^7.0.1",
-    "lint-staged": "^11.1.1",
-    "markdownlint-cli": "^0.28.1",
-    "prettier": "^2.3.2",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
+    "markdownlint-cli": "^0.30.0",
+    "prettier": "^2.5.0",
     "prettier-plugin-go-template": "0.0.11"
   }
 }
