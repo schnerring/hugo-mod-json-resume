@@ -11,8 +11,44 @@
       <div class="jr-basics__label">{{ . }}</div>
     {{ end }}
 
+    {{ with .email }}
+      <div class="jr-basics__email">{{ . }}</div>
+    {{ end }}
+
+    {{ with .phone }}
+      <div class="jr-basics__phone">{{ . }}</div>
+    {{ end }}
+
+    {{ with .url }}
+      <div class="jr-basics__url">
+        <a href="{{ . }}">{{ . }}</a>
+      </div>
+    {{ end }}
+
     {{ with .summary }}
-      <div class="jr-basics__description">{{ . }}</div>
+      <div class="jr-basics__summary">{{ . }}</div>
+    {{ end }}
+
+    {{ with .location }}
+      {{ with .address }}
+        <div class="jr-basics__location-address">{{ . }}</div>
+      {{ end }}
+
+      {{ with .postalCode }}
+        <div class="jr-basics__location-postalCode">{{ . }}</div>
+      {{ end }}
+
+      {{ with .city }}
+        <div class="jr-basics__location-city">{{ . }}</div>
+      {{ end }}
+
+      {{ with .countryCode }}
+        <div class="jr-basics__location-countryCode">{{ . }}</div>
+      {{ end }}
+
+      {{ with .region }}
+        <div class="jr-basics__location-region">{{ . }}</div>
+      {{ end }}
     {{ end }}
 
     {{ with where .profiles "username" "ne" nil }}
