@@ -20,15 +20,15 @@
     }
   },
   "dependencies": {
-    "simple-icons": "^6.0.0"
+    "simple-icons": "^6.19.0"
   },
   "description": "Hugo shortcodes to add structured JSON Resume data to your Hugo site.",
   "devDependencies": {
     "husky": "^7.0.4",
-    "lint-staged": "^12.1.2",
-    "markdownlint-cli": "^0.30.0",
-    "prettier": "^2.5.0",
-    "prettier-plugin-go-template": "0.0.11"
+    "lint-staged": "^12.4.0",
+    "markdownlint-cli": "^0.31.1",
+    "prettier": "^2.6.2",
+    "prettier-plugin-go-template": "^0.0.12"
   },
   "homepage": "https://github.com/schnerring/hugo-mod-json-resume#readme",
   "keywords": [
