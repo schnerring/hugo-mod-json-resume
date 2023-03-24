@@ -22,9 +22,6 @@ jobs:
           hugo-version: "0.111.3"
           extended: true
 
-      - name: Tidy Hugo Modules
-        run: hugo mod tidy
-
       - name: Write composite package.json
         run: hugo mod npm pack
 
