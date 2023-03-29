@@ -1,11 +1,11 @@
 {{ $cv := index $.Site.Data.json_resume $.Site.Language.Lang }}
 {{ with $cv.references }}
-  <section class="jr__list jr-references__list">
+  <div class="jr__list jr-references__list">
     {{ range . }}
       <blockquote class="jr__item jr-references__item">
         <p>{{ .reference }}</p>
         <p>— {{ .name }}</p>
       </blockquote>
     {{ end }}
-  </section>
+  </div>
 {{ end }}

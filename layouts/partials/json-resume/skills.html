@@ -1,6 +1,6 @@
 {{ $cv := index $.Site.Data.json_resume $.Site.Language.Lang }}
 {{ with $cv.skills }}
-  <section class="jr__list jr-skills__list">
+  <div class="jr__list jr-skills__list">
     <ul>
       {{ range . }}
         <li class="jr__item jr-skills__item">
@@ -13,5 +13,5 @@
         </li>
       {{ end }}
     </ul>
-  </section>
+  </div>
 {{ end }}

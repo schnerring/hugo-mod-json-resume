@@ -1,6 +1,6 @@
 {{ $cv := index $.Site.Data.json_resume $.Site.Language.Lang }}
 {{ with $cv.basics }}
-  <section class="jr__item jr-basics__item">
+  <div class="jr__item jr-basics__item">
     {{ partial "json-resume/basics-image.html" . }}
 
     {{ with .name }}
@@ -68,5 +68,5 @@
         {{ end }}
       </div>
     {{ end }}
-  </section>
+  </div>
 {{ end }}
