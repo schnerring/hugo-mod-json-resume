@@ -27,7 +27,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.2.1",
     "markdownlint-cli": "^0.33.0",
-    "prettier": "^2.8.7",
+    "prettier": "^2.8.8",
     "prettier-plugin-go-template": "^0.0.13"
   },
   "homepage": "https://github.com/schnerring/hugo-mod-json-resume#readme",
