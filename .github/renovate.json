@@ -20,6 +20,11 @@
       "**/__fixtures__/**"
     ]
   },
+  "gomod": {
+    "fileMatch": ["(^|/)go\\.mod$"],
+    "rangeStrategy": "bump",
+    "ignoreTests": true
+  },
   "packageRules": [
     {
       "extends": "packages:linters",
