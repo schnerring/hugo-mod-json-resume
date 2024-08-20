@@ -24,7 +24,7 @@
   },
   "description": "Hugo shortcodes to add structured JSON Resume data to your Hugo site.",
   "devDependencies": {
-    "husky": "^9.1.4",
+    "husky": "^9.1.5",
     "lint-staged": "^15.2.9",
     "markdownlint-cli": "^0.41.0",
     "prettier": "^3.3.3",
