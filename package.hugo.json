@@ -26,7 +26,7 @@
     "*.md": "markdownlint --fix"
   },
   "dependencies": {
-    "simple-icons": "^13.9.0"
+    "simple-icons": "^13.10.0"
   },
   "devDependencies": {
     "husky": "^9.1.6",
