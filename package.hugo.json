@@ -18,8 +18,6 @@
   },
   "keywords": ["hugo", "json-resume"],
   "scripts": {
-    "lint:md": "markdownlint --fix **/*.md",
-    "lint": "npm run lint:css && npm run lint:js && npm run lint:md",
     "prepare": "husky"
   },
   "lint-staged": {
@@ -30,7 +28,7 @@
   },
   "devDependencies": {
     "husky": "^9.1.7",
-    "lint-staged": "^15.5.2",
+    "lint-staged": "^16.1.6",
     "markdownlint-cli": "^0.45.0",
     "prettier": "^3.6.2",
     "prettier-plugin-go-template": "^0.0.15"
