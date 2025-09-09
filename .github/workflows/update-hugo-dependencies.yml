@@ -11,12 +11,12 @@ jobs:
       contents: write
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Install Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: "20"
+          node-version: "24"
 
       - name: Install Hugo
         uses: peaceiris/actions-hugo@v3
@@ -34,7 +34,7 @@ jobs:
         run: git status
 
       - name: Commit Changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: Update Hugo Dependencies
           commit_author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
