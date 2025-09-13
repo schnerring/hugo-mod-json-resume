@@ -1,15 +1,14 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": ["config:recommended"],
   "rebaseWhen": "behind-base-branch",
   "npm": {
-    "fileMatch": ["(^|/)package\\.hugo\\.json$"],
+    "managerFilePatterns": ["/(^|/)package\\.hugo\\.json$/"],
     "rangeStrategy": "bump",
-    "updateLockFiles": false,
+    "skipArtifactsUpdate": true,
     "ignoreTests": true,
     "ignorePaths": [
       "package.json",
-
       "**/node_modules/**",
       "**/bower_components/**",
       "**/vendor/**",
@@ -21,13 +20,13 @@
     ]
   },
   "gomod": {
-    "fileMatch": ["(^|/)go\\.mod$"],
+    "managerFilePatterns": ["/(^|/)go\\.mod$/"],
     "rangeStrategy": "bump",
     "ignoreTests": true
   },
   "packageRules": [
     {
-      "extends": "packages:linters",
+      "extends": ["packages:linters"],
       "groupName": "linters"
     },
     {
