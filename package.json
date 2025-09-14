@@ -20,7 +20,7 @@
     }
   },
   "dependencies": {
-    "simple-icons": "^15.14.0"
+    "simple-icons": "^15.15.0"
   },
   "description": "Hugo shortcodes to add structured JSON Resume data to your Hugo site.",
   "devDependencies": {
