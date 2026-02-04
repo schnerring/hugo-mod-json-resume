@@ -1,3 +1,3 @@
 module github.com/schnerring/hugo-mod-json-resume
 
-go 1.25.6
+go 1.25.7
