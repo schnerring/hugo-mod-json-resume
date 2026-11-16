@@ -16,7 +16,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v5
         with:
-          node-version: "24"
+          node-version: "26"
 
       - name: Install Hugo
         uses: peaceiris/actions-hugo@v3
